@@ -164,7 +164,7 @@ export default function App() {
           <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
             <h2 className="font-serif text-[clamp(44px,5vw,72px)] font-normal leading-none">The whole shelf</h2>
             <p className="max-w-[420px] text-base leading-relaxed text-cream-dim">
-              Every Prospero product, on one page. Buy from our official Tokopedia and Shopee stores.
+              Every Prospero product, on one page. Available at our official Tokopedia and Shopee stores.
             </p>
           </div>
 

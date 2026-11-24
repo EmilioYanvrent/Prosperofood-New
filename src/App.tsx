@@ -201,36 +201,53 @@ export default function App() {
         {/* ---------- ORDER ONLINE ---------- */}
         <section className="relative mx-auto max-w-[1440px] px-5 py-28 md:px-[5vw] md:py-32">
           <FloatingPiece kind="curl" depth={0.3} size={70} rotate={16} className="left-[6%] top-16" />
-          <h2 className="mb-12 text-center font-serif text-[clamp(40px,4.4vw,64px)] font-normal leading-none">
-            Order online
-          </h2>
-          <div className="flex flex-wrap gap-7">
+          <div className="mb-12 text-center">
+            <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] font-normal leading-none">Order online</h2>
+            <p className="mt-4 text-base text-cream-dim">Shop our official stores on Indonesia’s favourite marketplaces.</p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7">
             {[
-              { name: 'Tokopedia', href: STORE.tokopedia, host: 'tokopedia.com/', dot: 'bg-[#42B549]' },
-              { name: 'Shopee', href: STORE.shopee, host: 'shopee.co.id/', dot: 'bg-[#EE4D2D]' },
+              {
+                name: 'Tokopedia',
+                href: STORE.tokopedia,
+                url: 'tokopedia.com/prosperofood',
+                logo: 'logo-tokopedia.png',
+                hover: 'hover:border-[#42B549]/70',
+                fill: 'group-hover:border-[#42B549] group-hover:bg-[#42B549]',
+              },
+              {
+                name: 'Shopee',
+                href: STORE.shopee,
+                url: 'shopee.co.id/prosperofood',
+                logo: 'logo-shopee.png',
+                hover: 'hover:border-[#EE4D2D]/70',
+                fill: 'group-hover:border-[#EE4D2D] group-hover:bg-[#EE4D2D]',
+              },
             ].map((s) => (
               <a
                 key={s.name}
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex min-w-0 flex-[1_1_420px] flex-col gap-4 rounded-md border border-line-soft bg-cocoa-850 p-7 text-cream no-underline transition-colors duration-500 hover:border-gold md:p-10"
+                aria-label={`Open the Prospero store on ${s.name}`}
+                className={`group flex min-h-[240px] flex-col justify-between gap-10 rounded-md border border-line-soft bg-cocoa-850 p-7 text-cream no-underline transition-colors duration-500 md:min-h-[280px] md:p-10 ${s.hover}`}
               >
-                <span className="flex items-center gap-3 text-xs uppercase tracking-[0.14em] text-cream-dim md:text-sm">
-                  <span aria-hidden="true" className={`h-3 w-3 rounded-full ${s.dot}`} />
-                  {s.name}
-                </span>
-                <span className="break-words font-serif text-[26px] leading-tight md:text-[40px]">
-                  {s.host}
-                  <br />
-                  prosperofood
-                </span>
-                <span className="text-[15px] font-semibold text-link">
-                  Open the store{' '}
-                  <span aria-hidden="true" className="inline-block transition-transform duration-500 group-hover:translate-x-1">
-                    →
+                <div className="flex items-start justify-between gap-6">
+                  <img src={`${BASE}images/web/${s.logo}`} alt={s.name} className="h-10 w-auto md:h-12" />
+                  <span
+                    aria-hidden="true"
+                    className={`flex h-12 w-12 flex-none items-center justify-center rounded-full border border-line-strong text-cream transition-all duration-500 group-hover:text-white md:h-14 md:w-14 ${s.fill}`}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-500 group-hover:-rotate-45">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
                   </span>
-                </span>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.14em] text-gold">Official store</p>
+                  <p className="mt-2 font-serif text-[34px] leading-none md:text-[44px]">prosperofood</p>
+                  <p className="mt-3 text-sm text-muted">{s.url}</p>
+                </div>
               </a>
             ))}
           </div>

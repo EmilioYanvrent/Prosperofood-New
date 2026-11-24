@@ -147,12 +147,12 @@ export default function App() {
               <img
                 data-range-img
                 src={`${BASE}images/web/range.webp`}
-                alt="The full Prospero range: Realcho tubes, boxes and snack pouches"
+                alt="The full Prospero range on a marble table: Realcho tubes and boxes, Dark Chocolate 85%, Chobayoo, Belilagi, Chipsoe and Fruttachips"
                 loading="lazy"
-                className="block h-[clamp(380px,52vw,720px)] w-full object-cover will-change-transform"
+                className="block h-[60vw] w-full object-cover object-[50%_85%] will-change-transform md:h-[clamp(380px,46vw,680px)] md:object-[50%_80%]"
               />
             </div>
-            <FloatingPiece kind="chunk" depth={0.85} size={140} rotate={-14} className="-top-14 left-[6%] [&_svg]:max-md:!h-[84px] [&_svg]:max-md:!w-[84px]" />
+            <FloatingPiece kind="chunk" depth={0.85} size={140} rotate={-14} className="-top-14 left-[6%] hidden md:block" />
             <FloatingPiece kind="shard" depth={0.75} size={120} rotate={32} className="-bottom-11 right-[9%] [&_svg]:max-md:!h-[76px] [&_svg]:max-md:!w-[76px]" />
             <FloatingPiece kind="bean" depth={0.6} size={84} rotate={-20} className="-top-6 right-[30%] hidden md:block" />
           </div>

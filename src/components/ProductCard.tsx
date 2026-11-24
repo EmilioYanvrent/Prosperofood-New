@@ -1,5 +1,4 @@
 import type { Product } from '../data/products';
-import ShopLinks from './ShopLinks';
 import { Piece, type PieceKind } from './Chocolate';
 
 const HOVER_PIECES: PieceKind[] = ['chunk', 'shard', 'bean'];
@@ -45,7 +44,7 @@ export default function ProductCard({ product, layout = 'tall', index }: Props) 
         />
       </div>
 
-      <div className={`flex flex-1 flex-col gap-2.5 ${layout === 'feature' ? 'p-7 sm:p-9' : 'p-6'}`}>
+      <div className={`flex flex-1 flex-col gap-2.5 ${layout === 'feature' ? 'justify-center p-7 sm:p-12' : 'p-6'}`}>
         {product.featured && <p className="text-xs uppercase tracking-[0.14em] text-gold">Signature</p>}
         <h4
           className={`font-serif leading-tight ${
@@ -56,13 +55,6 @@ export default function ProductCard({ product, layout = 'tall', index }: Props) 
         </h4>
         <p className="text-[15px] leading-relaxed text-cream-dim">{product.description}</p>
         {product.detail && <p className="text-sm text-gold-light">{product.detail}</p>}
-        <ShopLinks
-          variant={product.featured ? 'solid' : 'outline'}
-          tokopedia={product.tokopedia}
-          shopee={product.shopee}
-          productName={product.name}
-          className="mt-auto pt-3"
-        />
       </div>
     </article>
   );

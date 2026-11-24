@@ -81,7 +81,6 @@ export default function App() {
               >
                 Shop the collection
               </a>
-              <ShopLinks variant="pill" className="[&>a]:min-h-[52px] [&>a]:px-5 [&>a]:text-[15px]" />
             </div>
           </div>
 
